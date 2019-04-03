@@ -2,7 +2,8 @@ var friends = require("../data/friends");
 
 module.exports = function(app) {
     
-app.get("/api/friends", function(req, res) {
+app.get("/api/friends", function(_req, res) {
+    
     res.json(friends);
     
 });
@@ -19,7 +20,7 @@ var bestMatch = {
 var userData = req.body;
 var userScores = userData.scores;
 
-var totalDifference = 0;
+var totalDifference;
 
 
 for (var i = 0; i < friends.length; i++) {
